@@ -12,44 +12,101 @@
 </head>
 
 <body>
-<ons-navigator swipeable id="myNavigator" page="myLists.html"></ons-navigator>
+<ons-navigator id="myNavigator" page="mainList.html"></ons-navigator>
 
-<!--<ons-page>-->
-
-    <!--<ons-tabbar swipeable position="auto">-->
-        <!--<ons-tab page="myLists.html" label="My Lists" icon="fa-bars, material:md-home" badge="7" active>-->
-        <!--</ons-tab>-->
-        <!--<ons-tab page="tab2.html" label="Tab 2" icon="md-settings" active-icon="md-face">-->
-        <!--</ons-tab>-->
-        <!--<ons-tab page="tab3.html" label="Tab 3" icon="md-settings" active-icon="md-face">-->
-        <!--</ons-tab>-->
-    <!--</ons-tabbar>-->
-<!--</ons-page>-->
-
-<template id="myLists.html">
-    <ons-page id="myLists">
-        <ons-list-item tappable>List 1</ons-list-item>
-        <ons-fab id="push-button" position="bottom right">
-            <ons-icon icon="fa-plus"></ons-icon>
-        </ons-fab>
-        <!--<ons-button id="push-button">Push page</ons-button>-->
+<template id="mainList.html">
+    <ons-page id="mainList">
+        <ons-list-title class="titles mainList">Lists</ons-list-title>
+        <ons-list-item id="essentials" modifier="nodivider" tappable class="listItems">Essentials</ons-list-item>
+        <ons-list-item id="wants" modifier="nodivider" tappable class="listItems">Wants</ons-list-item>
+        <ons-list-item id="needs" modifier="nodivider" tappable class="listItems">Needs</ons-list-item>
+        <ons-list-item id="dinners" modifier="nodivider" tappable class="listItems">Dinners</ons-list-item>
+        <ons-list-item id="shoppingList" modifier="nodivider" tappable class="listItems">Shopping List</ons-list-item>
+        <!--<ons-fab id="addList" position="bottom right">-->
+            <!--<ons-icon icon="fa-plus"></ons-icon>-->
+        <!--</ons-fab>-->
     </ons-page>
 </template>
 
-<template id="listItems.html">
-    <ons-page id="listItems">
+<template id="essentials.html">
+    <ons-page id="essentials">
+        <ons-toolbar class="essentials">
+            <div class="left"><ons-back-button></ons-back-button></div>
+            <div class="titles essentials center">Essentials</div>
+        </ons-toolbar>
+
+        <ons-list>
+            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
+            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
+            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
+            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
+            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
+            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
+            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
+            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
+            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
+            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
+            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
+            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
+            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
+            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
+            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
+            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
+            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
+            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
+            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
+            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
+            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
+            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
+            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
+            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
+        </ons-list>
+
+    </ons-page>
+</template>
+
+<template id="wants.html">
+    <ons-page id="wants">
+        <ons-toolbar class="wants">
+            <div class="left"><ons-back-button></ons-back-button></div>
+            <div class="titles wants center">Wants</div>
+        </ons-toolbar>
+    </ons-page>
+</template>
+
+<template id="needs.html">
+    <ons-page id="needs">
+        <ons-toolbar class="needs">
+            <div class="left"><ons-back-button></ons-back-button></div>
+            <div class="titles needs center">Needs</div>
+        </ons-toolbar>
+    </ons-page>
+</template>
+
+<template id="dinners.html">
+    <ons-page id="dinners">
+        <ons-toolbar class="dinners">
+            <div class="left"><ons-back-button></ons-back-button></div>
+            <div class="titles dinners center">Dinners</div>
+        </ons-toolbar>
+    </ons-page>
+</template>
+
+<template id="shoppingList.html">
+    <ons-page id="shoppingList">
+        <ons-toolbar class="shoppingList">
+            <div class="left"><ons-back-button></ons-back-button></div>
+            <div class="titles shoppingList center">Shopping List</div>
+        </ons-toolbar>
+    </ons-page>
+</template>
+
+<template id="addList.html">
+    <ons-page id="addList">
         <ons-toolbar>
             <div class="left"><ons-back-button>Page 1</ons-back-button></div>
             <div class="center"></div>
         </ons-toolbar>
-        <p style="text-align: center;">
-            This is the second page.
-        </p>
-    </ons-page>
-</template>
-
-<template id="tab3.html">
-    <ons-page id="Tab3">
         <p style="text-align: center;">
             This is the second page.
         </p>

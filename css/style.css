@@ -1,0 +1,52 @@
+.titles {
+    font-size: x-large;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    text-align: center;
+}
+
+.mainList {
+    background-color: purple;
+    color: white;
+}
+
+.essentials {
+    background-color: purple;
+    color: white;
+}
+
+.wants {
+    background-color: purple;
+    color: white;
+}
+
+.needs {
+    background-color: purple;
+    color: white;
+}
+
+.dinners {
+    background-color: purple;
+    color: white;
+}
+
+.shoppingList {
+    background-color: purple;
+    color: white;
+}
+
+.listItems {
+    font-size: large;
+    font-weight: bold;
+    border-bottom: solid;
+    border-bottom-width: 1px;
+    border-color: grey;
+    padding-top: 5px;
+    height: 40px;
+}
+
+.center {
+    padding-top: 0px;
+}
