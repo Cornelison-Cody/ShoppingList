@@ -8,32 +8,32 @@
 }
 
 .mainList {
-    background-color: purple;
+    background-color: #4ac1b1;
     color: white;
 }
 
 .essentials {
-    background-color: purple;
+    background-color: darkorange;
     color: white;
 }
 
 .wants {
-    background-color: purple;
+    background-color: #ae45a7;
     color: white;
 }
 
 .needs {
-    background-color: purple;
+    background-color: #5fc950;
     color: white;
 }
 
 .dinners {
-    background-color: purple;
+    background-color: #f51f11;
     color: white;
 }
 
 .shoppingList {
-    background-color: purple;
+    background-color: #4e54c2;
     color: white;
 }
 
@@ -49,4 +49,8 @@
 
 .center {
     padding-top: 0px;
+}
+
+.backChevron {
+    padding-left: 10px;
 }
