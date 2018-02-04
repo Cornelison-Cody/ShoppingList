@@ -36,13 +36,16 @@
         </ons-toolbar>
 
         <ons-gesture-detector>
-            <div id="detect-area" style="width: 100px; height: 100px; border: solid">
-                Swipe Here
-            </div>
+            <ons-list>
+                <div id="detect-area" style="height: 50px; border: solid; background-color: red">
+                    Swipe Here
+                </div>
+            </ons-list>
         </ons-gesture-detector>
         <script>
             document.addEventListener('swipeleft', function(event) {
                 if (event.target.matches('#detect-area')) {
+                    document.getElementById('detect-area').style.backgroundColor = "blue";
                     console.log('Swipe left is detected.');
                 }
             });
