@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<ons-navigator id="myNavigator" page="mainList.html"></ons-navigator>
+<ons-navigator id="myNavigator" swipeable page="mainList.html"></ons-navigator>
 
 <template id="mainList.html">
     <ons-page id="mainList">
@@ -22,7 +22,7 @@
         <ons-list-item id="needs" modifier="nodivider" tappable class="listItems">Needs</ons-list-item>
         <ons-list-item id="dinners" modifier="nodivider" tappable class="listItems">Dinners</ons-list-item>
         <ons-list-item id="shoppingList" modifier="nodivider" tappable class="listItems">Shopping List</ons-list-item>
-        <ons-fab id="addList" position="bottom right" class="mainList">
+        <ons-fab id="addList" position="bottom right" class="mainList" onclick="showDialog('dialog-addItem')">
             <ons-icon icon="fa-plus"></ons-icon>
         </ons-fab>
     </ons-page>
@@ -35,10 +35,24 @@
             <div class="titles essentials center">Essentials</div>
         </ons-toolbar>
 
-        <ons-list>
-            <ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>
-        </ons-list>
-        <ons-fab id="addList" position="bottom right" class="essentials">
+        <ons-gesture-detector>
+            <div id="detect-area" style="width: 100px; height: 100px; border: solid">
+                Swipe Here
+            </div>
+        </ons-gesture-detector>
+        <script>
+            document.addEventListener('swipeleft', function(event) {
+                if (event.target.matches('#detect-area')) {
+                    console.log('Swipe left is detected.');
+                }
+            });
+        </script>
+
+        <!--<ons-list>-->
+            <!--<ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>-->
+        <!--</ons-list>-->
+
+        <ons-fab id="addEssentials" position="bottom right" class="essentials" onclick="showDialog('dialog-addItem')">
             <ons-icon icon="fa-plus"></ons-icon>
         </ons-fab>
     </ons-page>
@@ -50,7 +64,7 @@
             <div class="left"><ons-back-button class="backChevron"></ons-back-button></div>
             <div class="titles wants center">Wants</div>
         </ons-toolbar>
-        <ons-fab id="addList" position="bottom right" class="wants">
+        <ons-fab id="addWants" position="bottom right" class="wants" onclick="showDialog('dialog-addItem')">
             <ons-icon icon="fa-plus"></ons-icon>
         </ons-fab>
     </ons-page>
@@ -62,7 +76,7 @@
             <div class="left"><ons-back-button class="backChevron"></ons-back-button></div>
             <div class="titles needs center">Needs</div>
         </ons-toolbar>
-        <ons-fab id="addList" position="bottom right" class="needs">
+        <ons-fab id="addNeeds" position="bottom right" class="needs" onclick="showDialog('dialog-addItem')">
             <ons-icon icon="fa-plus"></ons-icon>
         </ons-fab>
     </ons-page>
@@ -74,7 +88,7 @@
             <div class="left"><ons-back-button></ons-back-button></div>
             <div class="titles dinners center">Dinners</div>
         </ons-toolbar>
-        <ons-fab id="addList" position="bottom right" class="dinners">
+        <ons-fab id="addDinners" position="bottom right" class="dinners" onclick="showDialog('dialog-addItem')">
             <ons-icon icon="fa-plus"></ons-icon>
         </ons-fab>
     </ons-page>
@@ -86,23 +100,23 @@
             <div class="left"><ons-back-button class="backChevron"></ons-back-button></div>
             <div class="titles shoppingList center">Shopping List</div>
         </ons-toolbar>
-        <ons-fab id="addList" position="bottom right" class="shoppingList">
+        <ons-fab id="addShoppingList" position="bottom right" class="shoppingList" onclick="showDialog('dialog-addItem')">
             <ons-icon icon="fa-plus"></ons-icon>
         </ons-fab>
     </ons-page>
 </template>
 
-<template id="addList.html">
-    <ons-page id="addList">
-        <ons-toolbar>
-            <div class="left"><ons-back-button >Page 1</ons-back-button></div>
-            <div class="center"></div>
-        </ons-toolbar>
-        <p style="text-align: center;">
-            This is the second page.
+<ons-dialog cancelable id="dialog-addItem">
+    <div style="text-align: center; padding: 10px;">
+        <p>
+            <ons-input id="input-addItem" modifier="underbar" placeholder="Item" float></ons-input>
         </p>
-    </ons-page>
-</template>
+
+        <p>
+            <ons-button class="addItemButton" onclick="hideDialog('dialog-addItem')">Add Item</ons-button>
+        </p>
+    </div>
+</ons-dialog>
 
 <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>

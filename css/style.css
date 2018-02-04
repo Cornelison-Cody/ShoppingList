@@ -54,3 +54,8 @@
 .backChevron {
     padding-left: 10px;
 }
+
+.addItemButton {
+    color: white;
+    background-color: dimgrey;
+}

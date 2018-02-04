@@ -1,6 +1,5 @@
 document.addEventListener('init', function(event) {
     var page = event.target;
-    console.log("Page: ", page.id);
 
     if (page.id === 'mainList') {
         page.querySelector('#essentials').onclick = function() {
@@ -20,3 +19,15 @@ document.addEventListener('init', function(event) {
         };
     }
 });
+
+var showDialog = function (id) {
+    document
+        .getElementById(id)
+        .show();
+};
+
+var hideDialog = function (id) {
+    document
+        .getElementById(id)
+        .hide();
+};
