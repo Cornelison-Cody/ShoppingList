@@ -43,9 +43,15 @@
             </ons-list>
         </ons-gesture-detector>
         <script>
-            document.addEventListener('swipeleft', function(event) {
+            document.addEventListener('dragleft', function(event) {
                 if (event.target.matches('#detect-area')) {
                     document.getElementById('detect-area').style.backgroundColor = "blue";
+                    console.log('Swipe left is detected.');
+                }
+            });
+            document.addEventListener('dragright', function(event) {
+                if (event.target.matches('#detect-area')) {
+                    document.getElementById('detect-area').style.backgroundColor = "red";
                     console.log('Swipe left is detected.');
                 }
             });
