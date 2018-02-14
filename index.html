@@ -22,7 +22,7 @@
         <ons-list-item id="needs" modifier="nodivider" tappable class="listItems">Needs</ons-list-item>
         <ons-list-item id="dinners" modifier="nodivider" tappable class="listItems">Dinners</ons-list-item>
         <ons-list-item id="shoppingList" modifier="nodivider" tappable class="listItems">Shopping List</ons-list-item>
-        <ons-fab id="addList" position="bottom right" class="mainList" onclick="showDialog('dialog-addItem')">
+        <ons-fab id="addList" position="bottom right" class="mainList" onclick="showDialog('dialog-addItem', 'main')">
             <ons-icon icon="fa-plus"></ons-icon>
         </ons-fab>
     </ons-page>
@@ -42,26 +42,8 @@
                 </div>
             </ons-list>
         </ons-gesture-detector>
-        <script>
-            document.addEventListener('dragleft', function(event) {
-                if (event.target.matches('#detect-area')) {
-                    document.getElementById('detect-area').style.backgroundColor = "blue";
-                    console.log('Swipe left is detected.');
-                }
-            });
-            document.addEventListener('dragright', function(event) {
-                if (event.target.matches('#detect-area')) {
-                    document.getElementById('detect-area').style.backgroundColor = "red";
-                    console.log('Swipe left is detected.');
-                }
-            });
-        </script>
 
-        <!--<ons-list>-->
-            <!--<ons-list-item modifier="nodivider" class="listItems">Bread</ons-list-item>-->
-        <!--</ons-list>-->
-
-        <ons-fab id="addEssentials" position="bottom right" class="essentials" onclick="showDialog('dialog-addItem')">
+        <ons-fab id="addEssentials" position="bottom right" class="essentials" onclick="showDialog('dialog-addItem', 'essentials')">
             <ons-icon icon="fa-plus"></ons-icon>
         </ons-fab>
     </ons-page>
@@ -73,7 +55,7 @@
             <div class="left"><ons-back-button class="backChevron"></ons-back-button></div>
             <div class="titles wants center">Wants</div>
         </ons-toolbar>
-        <ons-fab id="addWants" position="bottom right" class="wants" onclick="showDialog('dialog-addItem')">
+        <ons-fab id="addWants" position="bottom right" class="wants" onclick="showDialog('dialog-addItem', 'wants')">
             <ons-icon icon="fa-plus"></ons-icon>
         </ons-fab>
     </ons-page>
@@ -85,7 +67,7 @@
             <div class="left"><ons-back-button class="backChevron"></ons-back-button></div>
             <div class="titles needs center">Needs</div>
         </ons-toolbar>
-        <ons-fab id="addNeeds" position="bottom right" class="needs" onclick="showDialog('dialog-addItem')">
+        <ons-fab id="addNeeds" position="bottom right" class="needs" onclick="showDialog('dialog-addItem', 'needs')">
             <ons-icon icon="fa-plus"></ons-icon>
         </ons-fab>
     </ons-page>
@@ -97,7 +79,7 @@
             <div class="left"><ons-back-button></ons-back-button></div>
             <div class="titles dinners center">Dinners</div>
         </ons-toolbar>
-        <ons-fab id="addDinners" position="bottom right" class="dinners" onclick="showDialog('dialog-addItem')">
+        <ons-fab id="addDinners" position="bottom right" class="dinners" onclick="showDialog('dialog-addItem', 'dinners')">
             <ons-icon icon="fa-plus"></ons-icon>
         </ons-fab>
     </ons-page>
@@ -109,7 +91,7 @@
             <div class="left"><ons-back-button class="backChevron"></ons-back-button></div>
             <div class="titles shoppingList center">Shopping List</div>
         </ons-toolbar>
-        <ons-fab id="addShoppingList" position="bottom right" class="shoppingList" onclick="showDialog('dialog-addItem')">
+        <ons-fab id="addShoppingList" position="bottom right" class="shoppingList" onclick="showDialog('dialog-addItem', 'shoppingList')">
             <ons-icon icon="fa-plus"></ons-icon>
         </ons-fab>
     </ons-page>
@@ -122,7 +104,7 @@
         </p>
 
         <p>
-            <ons-button class="addItemButton" onclick="hideDialog('dialog-addItem')">Add Item</ons-button>
+            <ons-button class="addItemButton" onclick="addItem('dialog-addItem', 'input-addItem')">Add Item</ons-button>
         </p>
     </div>
 </ons-dialog>

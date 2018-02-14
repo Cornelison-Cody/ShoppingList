@@ -20,14 +20,39 @@ document.addEventListener('init', function(event) {
     }
 });
 
-var showDialog = function (id) {
-    document
-        .getElementById(id)
-        .show();
+var showDialog = function (dialogId, sourceId) {
+    if (dialogId === 'dialog-addItem') {
+        document
+            .getElementById('input-addItem')
+            .value = '';
+        document
+            .getElementById(dialogId)
+            .show();
+    }
+    else {
+        document
+            .getElementById(dialogId)
+            .show();
+    }
+    currentPage = sourceId;
 };
 
-var hideDialog = function (id) {
+var hideDialog = function (dialogId) {
     document
-        .getElementById(id)
+        .getElementById(dialogId)
         .hide();
+    currentPage = '';
 };
+
+document.addEventListener('dragleft', function(event) {
+    if (event.target.matches('#detect-area')) {
+        document.getElementById('detect-area').style.backgroundColor = "blue";
+        console.log('Swipe left is detected.');
+    }
+});
+document.addEventListener('dragright', function(event) {
+    if (event.target.matches('#detect-area')) {
+        document.getElementById('detect-area').style.backgroundColor = "red";
+        console.log('Swipe left is detected.');
+    }
+});

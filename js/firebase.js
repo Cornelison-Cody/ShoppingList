@@ -14,30 +14,50 @@ firebase.initializeApp(config);
 
 var db = firebase.firestore();
 
-var docData = {
-    stringExample: "Hello world!",
-    booleanExample: true,
-    numberExample: 3.14159265,
-    dateExample: new Date("December 10, 1815"),
-    arrayExample: [5, true, "hello"],
-    nullExample: null,
-    objectExample: {
-        a: 5,
-        b: {
-            nested: "foo"
-        }
+var currentPage ='';
+
+var addItem = function (dialogId, inputId) {
+    writeData(currentPage, document.getElementById(inputId).value);
+    // console.log(document.getElementById(inputId).value);
+    hideDialog(dialogId);
+};
+
+var writeData = function (doc, data) {
+    if (doc === 'main') {
+        db.collection(doc).doc(data).set({isVisable: true}).then(function () {
+            //can add a success dialog
+        })
+    }
+    else {
+        db.collection("main").doc(doc).collection("items").doc(data).set({isVisable: true}).then(function () {
+            //can add a success dialog
+        })
     }
 };
-// db.collection("test").add(docData);
 
-db.collection("test")
+// var docRef = db.collection("Main").doc("ShoppingList");
+//
+// docRef.get().then(function(doc) {
+//     if (doc.exists) {
+//         console.log("Document data:", doc.data().testItem);
+//     } else {
+//         // doc.data() will be undefined in this case
+//         console.log("No such document!");
+//     }
+// }).catch(function(error) {
+//     console.log("Error getting document:", error);
+// });
+
+
+//this is where I left off. This returns all fo the docs to get the main list up and working.
+db.collection("main").where("isVisable", "==", true)
     .get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             // doc.data() is never undefined for query doc snapshots
-            console.log(doc.data().stringExample);
-
+            console.log(doc.id);
         });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
     });
-
-
