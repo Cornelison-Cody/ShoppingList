@@ -22,42 +22,57 @@ var addItem = function (dialogId, inputId) {
     hideDialog(dialogId);
 };
 
-var writeData = function (doc, data) {
-    if (doc === 'main') {
-        db.collection(doc).doc(data).set({isVisable: true}).then(function () {
+var writeData = function (pageId, data) {
+    if (pageId === 'main') {
+        db.collection('main').doc(data).set({isVisable: true}).then(function () {
             //can add a success dialog
         })
     }
     else {
-        db.collection("main").doc(doc).collection("items").doc(data).set({isVisable: true}).then(function () {
+        db.collection("main").doc(pageId).collection("items").doc(data).set({isVisable: true}).then(function () {
             //can add a success dialog
         })
     }
 };
 
-// var docRef = db.collection("Main").doc("ShoppingList");
-//
-// docRef.get().then(function(doc) {
-//     if (doc.exists) {
-//         console.log("Document data:", doc.data().testItem);
-//     } else {
-//         // doc.data() will be undefined in this case
-//         console.log("No such document!");
-//     }
-// }).catch(function(error) {
-//     console.log("Error getting document:", error);
-// });
+var getData = function (pageId, tempArray) {
+    if (pageId === 'main') {
+        db.collection("main").where("isVisable", "==", true)
+            .get()
+            .then(function (querySnapshot) {
+                querySnapshot.forEach(function (doc) {
+                    // doc.data() is never undefined for query doc snapshots
+                    tempArray.push(doc.id);
+                });
+            })
+            .catch(function (error) {
+                console.log("Error getting documents: ", error);
+            })
+    }
+    else {
+        db.collection("main").doc(pageId).collection("items").where("isVisable", "==", true)
+            .get()
+            .then(function(querySnapshot) {
+                querySnapshot.forEach(function(doc) {
+                    // doc.data() is never undefined for query doc snapshots
+                    tempArray.push(doc.id);
+                });
+            })
+            .catch(function(error) {
+                console.log("Error getting documents: ", error);
+            });
+    }
+};
 
+var createList = function (pageId, tempArray) {
+    // <ons-list-item id="essentials" modifier="nodivider" tappable class="listItems">Essentials</ons-list-item>
 
-//this is where I left off. This returns all fo the docs to get the main list up and working.
-db.collection("main").where("isVisable", "==", true)
-    .get()
-    .then(function(querySnapshot) {
-        querySnapshot.forEach(function(doc) {
-            // doc.data() is never undefined for query doc snapshots
-            console.log(doc.id);
-        });
-    })
-    .catch(function(error) {
-        console.log("Error getting documents: ", error);
-    });
+    if (pageId === 'main') {
+        for ( var i = 0; i < tempArray.length;  i++) {
+            var onsItem= document.createElement('ons-list-item');
+            onsItem.setAttribute('modifier', "nodivider");
+            onsItem.innerHTML = tempArray[i];
+            document.getElementById('mainList').appendChild(onsItem);
+        }
+    }
+};
