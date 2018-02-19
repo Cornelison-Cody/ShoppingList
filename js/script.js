@@ -1,7 +1,7 @@
 document.addEventListener('init', function(event) {
     var page = event.target;
 
-    if (page.id === 'mainList') {
+    if (page.id === 'main') {
         page.querySelector('#essentials').onclick = function() {
             document.querySelector('#myNavigator').pushPage('essentials.html');
         };

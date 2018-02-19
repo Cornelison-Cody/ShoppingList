@@ -76,3 +76,16 @@ var createList = function (pageId, tempArray) {
         }
     }
 };
+
+// testing list creation
+// var testArray = [];
+// getData('main', testArray);
+// createList('main',testArray);
+
+var createTitle = function (pageId, listId, title) {
+    var onsTitle = document.createElement('ons-list-header');
+    onsTitle.classList.add('titles');
+    onsTitle.classList.add(pageId);
+    onsTitle.innerHTML = title;
+    document.getElementById(listId).appendChild(onsTitle);
+};

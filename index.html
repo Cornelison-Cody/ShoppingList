@@ -12,28 +12,41 @@
 </head>
 
 <body>
-<ons-navigator id="myNavigator" swipeable page="mainList.html"></ons-navigator>
+<ons-navigator id="myNavigator" swipeable page="main.html"></ons-navigator>
 
-<template id="mainList.html">
-    <ons-page id="mainList">
-        <ons-list-title class="titles mainList">Lists</ons-list-title>
-        <ons-list-item id="essentials" modifier="nodivider" tappable class="listItems">Essentials</ons-list-item>
-        <ons-list-item id="wants" modifier="nodivider" tappable class="listItems">Wants</ons-list-item>
-        <ons-list-item id="needs" modifier="nodivider" tappable class="listItems">Needs</ons-list-item>
-        <ons-list-item id="dinners" modifier="nodivider" tappable class="listItems">Dinners</ons-list-item>
-        <ons-list-item id="shoppingList" modifier="nodivider" tappable class="listItems">Shopping List</ons-list-item>
-        <ons-fab id="addList" position="bottom right" class="mainList" onclick="showDialog('dialog-addItem', 'main')">
-            <ons-icon icon="fa-plus"></ons-icon>
-        </ons-fab>
+<template id="main.html">
+    <ons-page id="main">
+
+        <ons-list id="mainList" modifier="noborder">
+            <ons-list-header class="titles mainList">Lists</ons-list-header>
+            <ons-list-item id="essentials" modifier="nodivider" tappable class="listItems">Essentials</ons-list-item>
+            <ons-list-item id="wants" modifier="nodivider" tappable class="listItems">Wants</ons-list-item>
+            <ons-list-item id="needs" modifier="nodivider" tappable class="listItems">Needs</ons-list-item>
+            <ons-list-item id="dinners" modifier="nodivider" tappable class="listItems">Dinners</ons-list-item>
+            <ons-list-item id="shoppingList" modifier="nodivider" tappable class="listItems">Shopping List</ons-list-item>
+        </ons-list>
+        <!--<ons-fab id="addList" position="bottom right" class="mainList" onclick="showDialog('dialog-addItem', 'main')">-->
+            <!--<ons-icon icon="fa-plus"></ons-icon>-->
+        <!--</ons-fab>-->
     </ons-page>
 </template>
 
 <template id="essentials.html">
     <ons-page id="essentials">
-        <ons-toolbar class="essentials">
-            <div class="left"><ons-back-button class="backChevron"></ons-back-button></div>
-            <div class="titles essentials center">Essentials</div>
-        </ons-toolbar>
+        <!--<ons-toolbar class="essentials">-->
+            <!--&lt;!&ndash;<div class="left"><ons-back-button class="backChevron"></ons-back-button></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="titles essentials center">Essentials</div>&ndash;&gt;-->
+        <!--</ons-toolbar>-->
+        <ons-list id="essentialsList">
+            <ons-list-item class="essentials">
+                <div class="left">
+                    <ons-back-button class="backChevron"></ons-back-button>
+                </div>
+                <div class="center">
+                    <ons-list-header class="essentials titles">Essentials</ons-list-header>
+                </div>
+            </ons-list-item>
+        </ons-list>
 
         <ons-gesture-detector>
             <ons-list>
