@@ -3,11 +3,11 @@
     font-weight: bold;
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 30px;
+    padding-right: 20px;
     text-align: center;
 }
 
-.mainList {
+.main {
     background-color: #4ac1b1;
     color: white;
 }

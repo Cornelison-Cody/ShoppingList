@@ -64,28 +64,13 @@ var getData = function (pageId, tempArray) {
     }
 };
 
-var createList = function (pageId, tempArray) {
-    // <ons-list-item id="essentials" modifier="nodivider" tappable class="listItems">Essentials</ons-list-item>
+var buildList = function (pageId, tempArray) {
 
-    if (pageId === 'main') {
-        for ( var i = 0; i < tempArray.length;  i++) {
-            var onsItem= document.createElement('ons-list-item');
-            onsItem.setAttribute('modifier', "nodivider");
-            onsItem.innerHTML = tempArray[i];
-            document.getElementById('mainList').appendChild(onsItem);
-        }
+    for ( var i = 0; i < tempArray.length;  i++) {
+        var onsItem= document.createElement('ons-list-item');
+        onsItem.setAttribute('modifier', "nodivider");
+        onsItem.classList.add('listItems');
+        onsItem.innerHTML = tempArray[i];
+        document.getElementById(pageId + 'List').appendChild(onsItem);
     }
-};
-
-// testing list creation
-// var testArray = [];
-// getData('main', testArray);
-// createList('main',testArray);
-
-var createTitle = function (pageId, listId, title) {
-    var onsTitle = document.createElement('ons-list-header');
-    onsTitle.classList.add('titles');
-    onsTitle.classList.add(pageId);
-    onsTitle.innerHTML = title;
-    document.getElementById(listId).appendChild(onsTitle);
 };

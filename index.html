@@ -18,12 +18,12 @@
     <ons-page id="main">
 
         <ons-list id="mainList" modifier="noborder">
-            <ons-list-header class="titles mainList">Lists</ons-list-header>
-            <ons-list-item id="essentials" modifier="nodivider" tappable class="listItems">Essentials</ons-list-item>
-            <ons-list-item id="wants" modifier="nodivider" tappable class="listItems">Wants</ons-list-item>
-            <ons-list-item id="needs" modifier="nodivider" tappable class="listItems">Needs</ons-list-item>
-            <ons-list-item id="dinners" modifier="nodivider" tappable class="listItems">Dinners</ons-list-item>
-            <ons-list-item id="shoppingList" modifier="nodivider" tappable class="listItems">Shopping List</ons-list-item>
+            <ons-list-header class="titles main">Lists</ons-list-header>
+            <ons-list-item id="essentialsLink" modifier="nodivider" tappable class="listItems">Essentials</ons-list-item>
+            <ons-list-item id="wantsLink" modifier="nodivider" tappable class="listItems">Wants</ons-list-item>
+            <ons-list-item id="needsLink" modifier="nodivider" tappable class="listItems">Needs</ons-list-item>
+            <ons-list-item id="dinnersLink" modifier="nodivider" tappable class="listItems">Dinners</ons-list-item>
+            <ons-list-item id="shoppingListLink" modifier="nodivider" tappable class="listItems">Shopping List</ons-list-item>
         </ons-list>
         <!--<ons-fab id="addList" position="bottom right" class="mainList" onclick="showDialog('dialog-addItem', 'main')">-->
             <!--<ons-icon icon="fa-plus"></ons-icon>-->
@@ -34,27 +34,25 @@
 <template id="essentials.html">
     <ons-page id="essentials">
         <!--<ons-toolbar class="essentials">-->
-            <!--&lt;!&ndash;<div class="left"><ons-back-button class="backChevron"></ons-back-button></div>&ndash;&gt;-->
-            <!--&lt;!&ndash;<div class="titles essentials center">Essentials</div>&ndash;&gt;-->
+            <!--<div class="left"><ons-back-button class="backChevron"></ons-back-button></div>-->
+            <!--<div class="titles essentials center">Essentials</div>-->
         <!--</ons-toolbar>-->
-        <ons-list id="essentialsList">
-            <ons-list-item class="essentials">
-                <div class="left">
-                    <ons-back-button class="backChevron"></ons-back-button>
-                </div>
-                <div class="center">
-                    <ons-list-header class="essentials titles">Essentials</ons-list-header>
-                </div>
-            </ons-list-item>
+
+        <ons-list id="essentialsList" modifier="noborder">
+            <!--<ons-list-header class="titles essentials">Essentials</ons-list-header>-->
+            <!--<ons-list-item modifier="nodivider" class="listItems">testing 1</ons-list-item>-->
+            <!--<ons-list-item class="listItems">testing 2</ons-list-item>-->
+            <!--<ons-list-item class="listItems">testing 3</ons-list-item>-->
+            <!--<ons-list-item class="listItems" >testing 4</ons-list-item>-->
         </ons-list>
 
-        <ons-gesture-detector>
-            <ons-list>
-                <div id="detect-area" style="height: 50px; border: solid; background-color: red">
-                    Swipe Here
-                </div>
-            </ons-list>
-        </ons-gesture-detector>
+        <!--<ons-gesture-detector>-->
+            <!--<ons-list>-->
+                <!--<div id="detect-area" style="height: 50px; border: solid; background-color: red">-->
+                    <!--Swipe Here-->
+                <!--</div>-->
+            <!--</ons-list>-->
+        <!--</ons-gesture-detector>-->
 
         <ons-fab id="addEssentials" position="bottom right" class="essentials" onclick="showDialog('dialog-addItem', 'essentials')">
             <ons-icon icon="fa-plus"></ons-icon>
@@ -64,10 +62,13 @@
 
 <template id="wants.html">
     <ons-page id="wants">
-        <ons-toolbar class="wants">
-            <div class="left"><ons-back-button class="backChevron"></ons-back-button></div>
-            <div class="titles wants center">Wants</div>
-        </ons-toolbar>
+        <!--<ons-toolbar class="wants">-->
+            <!--<div class="left"><ons-back-button class="backChevron"></ons-back-button></div>-->
+            <!--<div class="titles wants center">Wants</div>-->
+        <!--</ons-toolbar>-->
+
+        <ons-list id="wantsList"></ons-list>
+
         <ons-fab id="addWants" position="bottom right" class="wants" onclick="showDialog('dialog-addItem', 'wants')">
             <ons-icon icon="fa-plus"></ons-icon>
         </ons-fab>
@@ -76,10 +77,13 @@
 
 <template id="needs.html">
     <ons-page id="needs">
-        <ons-toolbar class="needs">
-            <div class="left"><ons-back-button class="backChevron"></ons-back-button></div>
-            <div class="titles needs center">Needs</div>
-        </ons-toolbar>
+        <!--<ons-toolbar class="needs">-->
+            <!--<div class="left"><ons-back-button class="backChevron"></ons-back-button></div>-->
+            <!--<div class="titles needs center">Needs</div>-->
+        <!--</ons-toolbar>-->
+
+        <ons-list id="needsList"></ons-list>
+
         <ons-fab id="addNeeds" position="bottom right" class="needs" onclick="showDialog('dialog-addItem', 'needs')">
             <ons-icon icon="fa-plus"></ons-icon>
         </ons-fab>
@@ -88,10 +92,13 @@
 
 <template id="dinners.html">
     <ons-page id="dinners">
-        <ons-toolbar class="dinners" class="backChevron">
-            <div class="left"><ons-back-button></ons-back-button></div>
-            <div class="titles dinners center">Dinners</div>
-        </ons-toolbar>
+        <!--<ons-toolbar class="dinners" class="backChevron">-->
+            <!--<div class="left"><ons-back-button></ons-back-button></div>-->
+            <!--<div class="titles dinners center">Dinners</div>-->
+        <!--</ons-toolbar>-->
+
+        <ons-list id="dinnersList"></ons-list>
+
         <ons-fab id="addDinners" position="bottom right" class="dinners" onclick="showDialog('dialog-addItem', 'dinners')">
             <ons-icon icon="fa-plus"></ons-icon>
         </ons-fab>
@@ -100,10 +107,13 @@
 
 <template id="shoppingList.html">
     <ons-page id="shoppingList">
-        <ons-toolbar class="shoppingList">
-            <div class="left"><ons-back-button class="backChevron"></ons-back-button></div>
-            <div class="titles shoppingList center">Shopping List</div>
-        </ons-toolbar>
+        <!--<ons-toolbar class="shoppingList">-->
+            <!--<div class="left"><ons-back-button class="backChevron"></ons-back-button></div>-->
+            <!--<div class="titles shoppingList center">Shopping List</div>-->
+        <!--</ons-toolbar>-->
+
+        <ons-list id="shoppingListList"></ons-list>
+
         <ons-fab id="addShoppingList" position="bottom right" class="shoppingList" onclick="showDialog('dialog-addItem', 'shoppingList')">
             <ons-icon icon="fa-plus"></ons-icon>
         </ons-fab>
