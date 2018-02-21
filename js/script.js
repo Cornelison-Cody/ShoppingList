@@ -20,7 +20,7 @@ document.addEventListener('init', function(event) {
     }
     else {
         createTitle(page.id);
-        createList(page.id);
+        getDataBuildList(page.id);
     }
 });
 
@@ -88,8 +88,8 @@ var createTitle = function (pageId) {
 // };
 
 // ------------------------ List Items -----------------------
-var createList = function (pageId) {
-    var tempArray = [];
-    getData(pageId, tempArray);
-    buildList(pageId, tempArray);
-};
+// var createList = function (pageId) {
+//     var tempArray = [];
+//     getData(pageId, tempArray);
+//     buildList(pageId, tempArray);
+// };

@@ -30,19 +30,19 @@ var writeData = function (pageId, data) {
     }
     else {
         db.collection("main").doc(pageId).collection("items").doc(data).set({isVisable: true}).then(function () {
-            //can add a success dialog
+            createListItem(pageId,data);
         })
     }
 };
 
-var getData = function (pageId, tempArray) {
+var getDataBuildList = function (pageId) {
     if (pageId === 'main') {
         db.collection("main").where("isVisable", "==", true)
             .get()
             .then(function (querySnapshot) {
                 querySnapshot.forEach(function (doc) {
                     // doc.data() is never undefined for query doc snapshots
-                    tempArray.push(doc.id);
+                    createListItem(pageId, doc.id);
                 });
             })
             .catch(function (error) {
@@ -55,7 +55,7 @@ var getData = function (pageId, tempArray) {
             .then(function(querySnapshot) {
                 querySnapshot.forEach(function(doc) {
                     // doc.data() is never undefined for query doc snapshots
-                    tempArray.push(doc.id);
+                    createListItem(pageId, doc.id);
                 });
             })
             .catch(function(error) {
@@ -64,13 +64,50 @@ var getData = function (pageId, tempArray) {
     }
 };
 
-var buildList = function (pageId, tempArray) {
-
-    for ( var i = 0; i < tempArray.length;  i++) {
-        var onsItem= document.createElement('ons-list-item');
-        onsItem.setAttribute('modifier', "nodivider");
-        onsItem.classList.add('listItems');
-        onsItem.innerHTML = tempArray[i];
-        document.getElementById(pageId + 'List').appendChild(onsItem);
-    }
+var createListItem = function(pageId, item){
+    var onsItem= document.createElement('ons-list-item');
+    onsItem.setAttribute('modifier', "nodivider");
+    onsItem.classList.add('listItems');
+    onsItem.innerHTML = item;
+    document.getElementById(pageId + 'List').appendChild(onsItem);
 };
+
+// var buildList = function (pageId, tempArray) {
+//
+//     for ( var i = 0; i < tempArray.length;  i++) {
+//         var onsItem= document.createElement('ons-list-item');
+//         onsItem.setAttribute('modifier', "nodivider");
+//         onsItem.classList.add('listItems');
+//         onsItem.innerHTML = tempArray[i];
+//         document.getElementById(pageId + 'List').appendChild(onsItem);
+//     }
+// };
+
+// var getData = function (pageId, tempArray) {
+//     if (pageId === 'main') {
+//         db.collection("main").where("isVisable", "==", true)
+//             .get()
+//             .then(function (querySnapshot) {
+//                 querySnapshot.forEach(function (doc) {
+//                     // doc.data() is never undefined for query doc snapshots
+//                     tempArray.push(doc.id);
+//                 });
+//             })
+//             .catch(function (error) {
+//                 console.log("Error getting documents: ", error);
+//             })
+//     }
+//     else {
+//         db.collection("main").doc(pageId).collection("items").where("isVisable", "==", true)
+//             .get()
+//             .then(function(querySnapshot) {
+//                 querySnapshot.forEach(function(doc) {
+//                     // doc.data() is never undefined for query doc snapshots
+//                     tempArray.push(doc.id);
+//                 });
+//             })
+//             .catch(function(error) {
+//                 console.log("Error getting documents: ", error);
+//             });
+//     }
+// };
