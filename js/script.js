@@ -49,47 +49,47 @@ var hideDialog = function (dialogId) {
 };
 
 document.addEventListener('dragleft', function(event) {
-    if (event.target.matches('#detect-area')) {
-        document.getElementById('detect-area').style.backgroundColor = "blue";
-    }
+    console.log(event.target.innerHTML);
 });
+
 document.addEventListener('dragright', function(event) {
-    if (event.target.matches('#detect-area')) {
-        document.getElementById('detect-area').style.backgroundColor = "red";
-    }
+    console.log(event.target.innerHTML);
 });
 
 // ----------------- Title - No Back Button -------------------
-var createTitle = function (pageId) {
-    var onsTitle = document.createElement('ons-list-header');
-    onsTitle.classList.add('titles');
-    onsTitle.classList.add(pageId);
-    onsTitle.innerHTML = pageId;
-    document.querySelector('#' + pageId + 'List').appendChild(onsTitle);
-};
-
-// -------------------- Title - Back Button --------------------
 // var createTitle = function (pageId) {
-//     var onsToolbar = document.createElement('ons-toolbar');
-//     onsToolbar.classList.add(pageId);
-//     var onsTitle = document.createElement('div');
+//     var onsTitle = document.createElement('ons-list-header');
 //     onsTitle.classList.add('titles');
 //     onsTitle.classList.add(pageId);
-//     onsTitle.classList.add('center');
 //     onsTitle.innerHTML = pageId;
-//     var backButtonDiv = document.createElement('div');
-//     backButtonDiv.classList.add('left');
-//     var backButton = document.createElement('ons-back-button');
-//     backButton.classList.add('backChevron');
-//     backButtonDiv.appendChild(backButton);
-//     onsToolbar.appendChild(backButtonDiv);
-//     onsToolbar.appendChild(onsTitle);
-//     document.getElementById(pageId).appendChild(onsToolbar);
+//     document.querySelector('#' + pageId + 'List').appendChild(onsTitle);
 // };
 
+// -------------------- Title - Back Button --------------------
+var createTitle = function (pageId) {
+    var onsToolbar = document.createElement('ons-toolbar');
+    onsToolbar.classList.add(pageId);
+    var onsTitle = document.createElement('div');
+    onsTitle.classList.add('titles');
+    onsTitle.classList.add(pageId);
+    onsTitle.classList.add('center');
+    onsTitle.innerHTML = pageId;
+    var backButtonDiv = document.createElement('div');
+    backButtonDiv.classList.add('left');
+    var backButton = document.createElement('ons-back-button');
+    backButton.classList.add('backChevron');
+    backButtonDiv.appendChild(backButton);
+    onsToolbar.appendChild(backButtonDiv);
+    onsToolbar.appendChild(onsTitle);
+    document.getElementById(pageId).appendChild(onsToolbar);
+};
+
 // ------------------------ List Items -----------------------
-// var createList = function (pageId) {
-//     var tempArray = [];
-//     getData(pageId, tempArray);
-//     buildList(pageId, tempArray);
-// };
+var createListItem = function(pageId, item){
+    var onsItem= document.createElement('ons-list-item');
+    onsItem.setAttribute('modifier', "nodivider");
+    onsItem.classList.add('listItems');
+    onsItem.innerHTML = item;
+    document.getElementById(pageId + 'List').appendChild(onsItem);
+};
+

@@ -34,15 +34,10 @@
 <template id="essentials.html">
     <ons-page id="essentials">
 
-        <ons-list id="essentialsList" modifier="noborder"></ons-list>
+        <ons-gesture-detector>
+            <ons-list id="essentialsList" modifier="noborder"></ons-list>
+        </ons-gesture-detector>
 
-        <!--<ons-gesture-detector>-->
-            <!--<ons-list>-->
-                <!--<div id="detect-area" style="height: 50px; border: solid; background-color: red">-->
-                    <!--Swipe Here-->
-                <!--</div>-->
-            <!--</ons-list>-->
-        <!--</ons-gesture-detector>-->
 
         <ons-fab id="addEssentials" position="bottom right" class="essentials" onclick="showDialog('dialog-addItem', 'essentials')">
             <ons-icon icon="fa-plus"></ons-icon>
