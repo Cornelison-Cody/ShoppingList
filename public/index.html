@@ -1,0 +1,138 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Cornelison App</title>
+    <link rel="stylesheet" href="./OnsenUI-dist-2.8.3/css/onsenui.css">
+    <link rel="stylesheet" href="./OnsenUI-dist-2.8.3/css/onsen-css-components.min.css">
+    <script src="./OnsenUI-dist-2.8.3/js/onsenui.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+<ons-navigator id="myNavigator" swipeable page="main.html"></ons-navigator>
+
+<template id="main.html">
+    <ons-page id="main">
+        <ons-list id="mainList" modifier="noborder">
+            <ons-list-header class="titles main">Cornelison Clan</ons-list-header>
+            <ons-list-item id="shoppingListLink" modifier="nodivider" tappable class="listItems">Shopping List</ons-list-item>
+            <ons-list-item id="dinnerIdeasLink" modifier="nodivider" tappable class="listItems">Dinner Ideas</ons-list-item>
+            <ons-list-item id="dutiesLink" modifier="nodivider" tappable class="listItems">Duties</ons-list-item>
+        </ons-list>
+    </ons-page>
+</template>
+
+<template id="shoppingList.html">
+    <ons-page id="shoppingList">
+        <ons-toolbar class="shoppingList">
+            <div class="left"><ons-back-button class="backChevron"></ons-back-button></div>
+            <div class="titles center shoppingList">Shopping List</div>
+        </ons-toolbar>
+        <ons-list id="shoppingListList" modifier="noborder"></ons-list>
+        <ons-fab id="addShoppingList" position="bottom right" class="shoppingList" onclick="showDialog('dialog-addItem', 'shoppingList')">
+            <ons-icon icon="fa-plus"></ons-icon>
+        </ons-fab>
+    </ons-page>
+</template>
+
+<template id="dinnerIdeas.html">
+    <ons-page id="dinnerIdeas">
+        <ons-toolbar class="dinnerIdeas">
+            <div class="left"><ons-back-button class="backChevron"></ons-back-button></div>
+            <div class="titles center dinnerIdeas">Dinner Ideas</div>
+        </ons-toolbar>
+        <ons-list id="essentialsList" modifier="noborder"></ons-list>
+        <ons-fab id="addEssentials" position="bottom right" class="dinnerIdeas" onclick="showDialog('dialog-addItem', 'dinnerIdeas')">
+            <ons-icon icon="fa-plus"></ons-icon>
+        </ons-fab>
+    </ons-page>
+</template>
+
+<template id="duties.html">
+    <ons-page id="duties">
+        <ons-toolbar class="duties">
+            <div class="left"><ons-back-button class="backChevron"></ons-back-button></div>
+            <div class="titles center duties">Duties</div>
+        </ons-toolbar>
+        <ons-list id="dutiesList" modifier="noborder">
+            <ons-list-item id="dinnerLink" modifier="nodivider" tappable class="listItems">Dinner</ons-list-item>
+            <ons-list-item id="dishesLink" modifier="nodivider" tappable class="listItems">Dishes</ons-list-item>
+            <ons-list-item id="laundryLink" modifier="nodivider" tappable class="listItems">Laundry</ons-list-item>
+        </ons-list>
+    </ons-page>
+</template>
+
+<template id="dinner.html">
+    <ons-page id="dinner">
+        <ons-toolbar class="dinner">
+            <div class="left"><ons-back-button class="backChevron"></ons-back-button></div>
+            <div class="titles center dinner">Dinner</div>
+        </ons-toolbar>
+        <ons-list id="needsList" modifier="noborder">
+            <ons-list-item class="listItems">Monday: Mom/Kris</ons-list-item>
+            <ons-list-item class="listItems">Tuesday: Mom/Kris</ons-list-item>
+            <ons-list-item class="listItems">Wednesday: Mom/Kris</ons-list-item>
+            <ons-list-item class="listItems">Thursday: Leftovers</ons-list-item>
+            <ons-list-item class="listItems">Friday: Kade/Katie</ons-list-item>
+            <ons-list-item class="listItems">Saturday: Kade/Katie</ons-list-item>
+            <ons-list-item class="listItems">Sunday: Cody</ons-list-item>
+        </ons-list>
+    </ons-page>
+</template>
+
+<template id="dishes.html">
+    <ons-page id="dishes">
+        <ons-toolbar class="dishes">
+            <div class="left"><ons-back-button class="backChevron"></ons-back-button></div>
+            <div class="titles center dishes">Dishes</div>
+        </ons-toolbar>
+        <ons-list id="needsList" modifier="noborder">
+            <ons-list-item class="listItems">Monday: Mom</ons-list-item>
+            <ons-list-item class="listItems">Tuesday: Cody</ons-list-item>
+            <ons-list-item class="listItems">Wednesday: John</ons-list-item>
+            <ons-list-item class="listItems">Thursday: Kade/Katie</ons-list-item>
+            <ons-list-item class="listItems">Friday: Cody</ons-list-item>
+            <ons-list-item class="listItems">Saturday: John/Cody</ons-list-item>
+            <ons-list-item class="listItems">Sunday: Kade/Katie</ons-list-item>
+        </ons-list>
+    </ons-page>
+</template>
+
+<template id="laundry.html">
+    <ons-page id="laundry">
+        <ons-toolbar class="laundry">
+            <div class="left"><ons-back-button class="backChevron"></ons-back-button></div>
+            <div class="titles center laundry">Laundry</div>
+        </ons-toolbar>
+        <ons-list id="needsList" modifier="noborder">
+            <ons-list-item class="listItems">Monday: Mom</ons-list-item>
+            <ons-list-item class="listItems">Tuesday: K-Bob</ons-list-item>
+            <ons-list-item class="listItems">Wednesday: John</ons-list-item>
+            <ons-list-item class="listItems">Thursday: Kristin</ons-list-item>
+            <ons-list-item class="listItems">Friday: Kade/Katie</ons-list-item>
+            <ons-list-item class="listItems">Saturday: Kade/Katie</ons-list-item>
+            <ons-list-item class="listItems">Sunday: Kristin</ons-list-item>
+        </ons-list>
+    </ons-page>
+</template>
+
+<ons-dialog cancelable id="dialog-addItem">
+    <div style="text-align: center; padding: 10px;">
+        <p>
+            <ons-input id="input-addItem" modifier="underbar" placeholder="Item" float></ons-input>
+        </p>
+        <p>
+            <ons-button class="addItemButton" onclick="addItem('dialog-addItem', 'input-addItem')">Add Item</ons-button>
+        </p>
+    </div>
+</ons-dialog>
+
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>
+<script src="js/firebase.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
