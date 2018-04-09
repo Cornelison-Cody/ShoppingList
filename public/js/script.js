@@ -22,6 +22,9 @@ document.addEventListener('init', function(event) {
         page.querySelector('#laundryLink').onclick = function() {
             document.querySelector('#myNavigator').pushPage('laundry.html');
         };
+        page.querySelector('#prayerLink').onclick = function() {
+            document.querySelector('#myNavigator').pushPage('prayer.html');
+        };
     }
     if (page.id === 'shoppingList' || page.id === 'dinnerIdeas') {
         // createTitle(page.id);

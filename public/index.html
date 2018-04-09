@@ -61,6 +61,7 @@
             <ons-list-item id="dinnerLink" modifier="nodivider" tappable class="listItems">Dinner</ons-list-item>
             <ons-list-item id="dishesLink" modifier="nodivider" tappable class="listItems">Dishes</ons-list-item>
             <ons-list-item id="laundryLink" modifier="nodivider" tappable class="listItems">Laundry</ons-list-item>
+            <ons-list-item id="prayerLink" modifier="nodivider" tappable class="listItems">Prayers</ons-list-item>
         </ons-list>
     </ons-page>
 </template>
@@ -72,13 +73,13 @@
             <div class="titles center dinner">Dinner</div>
         </ons-toolbar>
         <ons-list id="needsList" modifier="noborder">
-            <ons-list-item class="listItems">Monday: Mom/Kris</ons-list-item>
-            <ons-list-item class="listItems">Tuesday: Mom/Kris</ons-list-item>
-            <ons-list-item class="listItems">Wednesday: Mom/Kris</ons-list-item>
-            <ons-list-item class="listItems">Thursday: Leftovers</ons-list-item>
-            <ons-list-item class="listItems">Friday: Kade/Katie</ons-list-item>
-            <ons-list-item class="listItems">Saturday: Kade/Katie</ons-list-item>
-            <ons-list-item class="listItems">Sunday: Cody</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Monday: Mom/Kris</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Tuesday: Mom/Kris</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Wednesday: Mom/Kris</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Thursday: Leftovers</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Friday: Kade/Katie</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Saturday: Kade/Katie</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Sunday: Cody</ons-list-item>
         </ons-list>
     </ons-page>
 </template>
@@ -90,13 +91,13 @@
             <div class="titles center dishes">Dishes</div>
         </ons-toolbar>
         <ons-list id="needsList" modifier="noborder">
-            <ons-list-item class="listItems">Monday: Mom</ons-list-item>
-            <ons-list-item class="listItems">Tuesday: Cody</ons-list-item>
-            <ons-list-item class="listItems">Wednesday: John</ons-list-item>
-            <ons-list-item class="listItems">Thursday: Kade/Katie</ons-list-item>
-            <ons-list-item class="listItems">Friday: Cody</ons-list-item>
-            <ons-list-item class="listItems">Saturday: John/Cody</ons-list-item>
-            <ons-list-item class="listItems">Sunday: Kade/Katie</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Monday: Mom</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Tuesday: Cody</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Wednesday: John</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Thursday: Kade/Katie</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Friday: Cody</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Saturday: John/Cody</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Sunday: Kade/Katie</ons-list-item>
         </ons-list>
     </ons-page>
 </template>
@@ -108,13 +109,31 @@
             <div class="titles center laundry">Laundry</div>
         </ons-toolbar>
         <ons-list id="needsList" modifier="noborder">
-            <ons-list-item class="listItems">Monday: Mom</ons-list-item>
-            <ons-list-item class="listItems">Tuesday: K-Bob</ons-list-item>
-            <ons-list-item class="listItems">Wednesday: John</ons-list-item>
-            <ons-list-item class="listItems">Thursday: Kristin</ons-list-item>
-            <ons-list-item class="listItems">Friday: Kade/Katie</ons-list-item>
-            <ons-list-item class="listItems">Saturday: Kade/Katie</ons-list-item>
-            <ons-list-item class="listItems">Sunday: Kristin</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Monday: Mom</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Tuesday: K-Bob</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Wednesday: John</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Thursday: Kristin</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Friday: Kade/Katie</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Saturday: Kade/Katie</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Sunday: Kristin</ons-list-item>
+        </ons-list>
+    </ons-page>
+</template>
+
+<template id="prayer.html">
+    <ons-page id="prayer">
+        <ons-toolbar class="dinnerIdeas">
+            <div class="left"><ons-back-button class="backChevron"></ons-back-button></div>
+            <div class="titles center dinnerIdeas">Prayer Night</div>
+        </ons-toolbar>
+        <ons-list id="prayerList" modifier="noborder">
+            <ons-list-item class="listItems" modifier="nodivider">Monday: Mom</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Tuesday: Dad</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Wednesday: Kristin</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Thursday: Kade</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Friday: Cody</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Saturday: Katie</ons-list-item>
+            <ons-list-item class="listItems" modifier="nodivider">Sunday: Kaleb</ons-list-item>
         </ons-list>
     </ons-page>
 </template>
